@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Forden is a boot for Github.",
-  "author": "Henrique Tavares <henrique.tavares@getninjas.com.br>",
+  "author": "Henrique Tavares <ihenrits@gmail.com>",
   "license": "ISC",
-  "homepage": "https://github.com/getninjas/forden",
+  "homepage": "https://github.com/tavareshenrique/forden",
   "keywords": [
     "probot",
     "github",

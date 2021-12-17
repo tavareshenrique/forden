@@ -1,15 +1,15 @@
 import { Probot } from "probot";
 
 export = (app: Probot) => {
-  app.on("issues.opened", async (context) => {
-    const issueComment = context.issue({
-      body: "Thanks for opening this issue!",
-    });
-    await context.octokit.issues.createComment(issueComment);
-  });
-  // For more information on building apps:
-  // https://probot.github.io/docs/
+  const isFriday = new Date().getDay() === 5;
 
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
+  if (isFriday) {
+    app.on(["pull_request.opened"], async (context) => {    
+      const comment = context.issue({
+        body: "Lembre-se que hoje é sexta-feira e sexta-feira não é dia de deploy!",
+      });
+
+      await context.octokit.issues.createComment(comment);
+    });
+  }
 };
